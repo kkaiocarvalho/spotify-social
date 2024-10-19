@@ -1,7 +1,9 @@
+import LoginPage from "@/components/pages/login-cadastro/login"
+
 function App() {
   return (
     <div className="">
-      <h1>App</h1>
+      <LoginPage />
     </div>
   )
 }
