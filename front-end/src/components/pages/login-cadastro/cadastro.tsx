@@ -54,11 +54,11 @@ export default function CadastroPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-zinc-900 text-white">
+    <div className="min-h-screen bg-[#1f1f1f] flex items-center justify-center p-4">
+      <Card className="w-full max-w-md border-none bg-zinc-800 text-white">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center flex items-center justify-center">
-            <Music className="mr-2 text-green-500" />
+            <Music className="mr-2 text-[#ff0fa6]" />
             Spotify Social
           </CardTitle>
           <CardDescription className="text-zinc-400 text-center">
@@ -136,7 +136,7 @@ export default function CadastroPage() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-black font-bold">
+              <Button type="submit" className="w-full bg-[#ff0fa6] hover:bg-[#ff0fa7d2] text-black font-bold">
                 Criar Conta
               </Button>
             </form>
@@ -162,7 +162,7 @@ export default function CadastroPage() {
         <CardFooter>
           <p className="text-center text-sm text-zinc-500 w-full">
             Já tem uma conta?{' '}
-            <Link to="/login" className="text-green-500 hover:underline">
+            <Link to="/login" className="text-[#ff0fa6] hover:underline">
               Entrar
             </Link>
           </p>
