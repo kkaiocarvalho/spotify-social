@@ -8,9 +8,10 @@ import { Input } from "@/components/ui/input"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Separator } from "@/components/ui/separator"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Music } from "lucide-react"
+//import { Music } from "lucide-react"
 import { Link } from 'react-router-dom'
 import IconSpotifySocial from '@/assets/icon'
+import GaiaIcon from '@/assets/gaiaIcon'
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -58,11 +59,12 @@ export default function CadastroPage() {
       <Card className="w-full max-w-md border-none bg-zinc-800 text-white">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center flex items-center justify-center">
-            <Music className="mr-2 text-[#ff0fa6]" />
-            Gaia Music
+          <GaiaIcon/>
+            <text>aia</text>
+            <text className='font-thin'>Music</text>
           </CardTitle>
           <CardDescription className="text-zinc-400 text-center">
-          Crie uma atmosfera envolvente com música no seu espaço
+            Crie uma atmosfera envolvente com música no seu espaço
           </CardDescription>
         </CardHeader>
         <CardContent>
