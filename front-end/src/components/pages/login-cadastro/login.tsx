@@ -50,10 +50,10 @@ export default function LoginPage() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center flex items-center justify-center">
             <Music className="mr-2 text-[#ff0fa6]" />
-            Spotify Social
+            Gaia Music
           </CardTitle>
           <CardDescription className="text-zinc-400 text-center">
-            Entre para conectar-se com outros fãs de música
+          Crie uma atmosfera envolvente com música no seu espaço
           </CardDescription>
         </CardHeader>
         <CardContent>
