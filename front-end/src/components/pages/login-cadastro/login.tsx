@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import IconSpotifySocial from '@/assets/icon'
 import GaiaIconForDark from '@/assets/gaiaIconForDark'
@@ -8,7 +9,7 @@ import GaiaIconForLight from '@/assets/gaiaIconForLight'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 export default function LoginPage() {
-  //const [] = useState<string | null>(null);
+  const [, ] = useState<string | null>(null);
   const { theme } = useTheme();
 
 
