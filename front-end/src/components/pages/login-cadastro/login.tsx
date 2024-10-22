@@ -10,7 +10,9 @@ import { Separator } from "@/components/ui/separator"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Link } from 'react-router-dom'
 import IconSpotifySocial from '@/assets/icon'
-import GaiaIcon from '@/assets/gaiaIcon'
+import GaiaIconForDark from '@/assets/gaiaIconForDark'
+import { useTheme } from '@/components/theme-provider'
+import GaiaIconForLight from '@/assets/gaiaIconForLight'
 
 const formSchema = z.object({
   email: z.string().email({
@@ -22,7 +24,8 @@ const formSchema = z.object({
 })
 
 export default function LoginPage() {
-  const [loginError, setLoginError] = useState<string | null>(null)
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const { theme } = useTheme();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -42,58 +45,60 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center p-4">  
+    <div className="flex items-center justify-center h-[500px]">  
       <Card className="w-full max-w-md border-none bg-card">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center flex items-center justify-center mb-2">
-            <GaiaIcon/>
+            {theme === 'dark'? <GaiaIconForDark/> : <GaiaIconForLight/>}
           </CardTitle>
           <CardDescription className="text-muted-foreground text-center">
             Crie uma atmosfera envolvente com música no seu espaço
           </CardDescription>
         </CardHeader>
         <CardContent>
+          {/*
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input 
-                        placeholder="seu@email.com" 
-                        {...field} 
-                        className="bg-input border-input text-foreground placeholder:text-muted-foreground"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Senha</FormLabel>
-                    <FormControl>
-                      <Input 
-                        type="password" 
-                        {...field} 
-                        className="bg-input border-input text-foreground"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
-                Entrar
-              </Button>
-            </form>
-          </Form>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input 
+                      placeholder="seu@email.com" 
+                      {...field} 
+                      className="bg-input border-input text-foreground placeholder:text-muted-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Senha</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="password" 
+                      {...field} 
+                      className="bg-input border-input text-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
+              Entrar
+            </Button>
+          </form>
+        </Form>
+          
           {loginError && (
             <Alert variant="destructive" className="mt-4">
               <AlertDescription>{loginError}</AlertDescription>
@@ -101,12 +106,13 @@ export default function LoginPage() {
           )}
           <div className="mt-4">
             <Separator className="bg-border" />
-            <p className="text-center text-xs text-muted-foreground my-4 uppercase">Ou continue com</p>
-          </div>
+            <p className="text-center text-xs text-muted-foreground my-4 uppercase">Continue com</p>
+          </div>*/}
           <Button 
             variant="outline" 
-            className="w-full"
+            className="w-full hover:bg-[#FF0FA6] text-[#FF0FA6] border-[#FF0FA6] hover:text-white font-bold transition duration-700"
             onClick={handleSpotifyLogin}
+            
           >
             <IconSpotifySocial />
             Entrar com Spotify
@@ -114,10 +120,11 @@ export default function LoginPage() {
         </CardContent>
         <CardFooter>
           <p className="text-center text-sm text-muted-foreground w-full">
-            Não tem uma conta?{' '}
-            <Link to="/cadastro" className="text-primary hover:underline">
+            Não tem uma conta? {' '}
+            <a href="https://accounts.spotify.com/pt-BR/login" className={`${theme === 'light' ? 'text-[#FF0FA6]' : 'text-white hover:text-[#FF0FA6]'} text-center text-sm w-full underline`}>Crie uma conta</a>
+            {/*<Link to="/cadastro" className="text-primary hover:underline">
               Criar conta
-            </Link>
+            </Link>*/}
           </p>
         </CardFooter>
       </Card>

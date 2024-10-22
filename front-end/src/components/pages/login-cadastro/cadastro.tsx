@@ -11,7 +11,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 //import { Music } from "lucide-react"
 import { Link } from 'react-router-dom'
 import IconSpotifySocial from '@/assets/icon'
-import GaiaIcon from '@/assets/gaiaIcon'
+import GaiaIcon from '@/assets/gaiaIconForDark'
 
 const formSchema = z.object({
   name: z.string().min(2, {
