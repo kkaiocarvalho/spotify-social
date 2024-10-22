@@ -1,8 +1,19 @@
-function App() {
+import { ThemeProvider } from "@/components/theme-provider"
+import { ModeToggle } from "./components/mode-toggle"
+import { Outlet } from 'react-router-dom'
+
+function App() { 
   return (
-    <div className="">
-      <h1>Spotify Social teste</h1>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="min-h-screen bg-background text-foreground">
+        <header className="p-4 flex justify-end">
+          <ModeToggle />
+        </header>
+        <main>
+          <Outlet />
+        </main>
+      </div>
+    </ThemeProvider>
   )
 }
 
