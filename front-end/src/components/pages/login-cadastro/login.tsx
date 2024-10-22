@@ -1,44 +1,17 @@
-import { useState } from 'react'
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Separator } from "@/components/ui/separator"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Link } from 'react-router-dom'
 import IconSpotifySocial from '@/assets/icon'
 import GaiaIconForDark from '@/assets/gaiaIconForDark'
 import { useTheme } from '@/components/theme-provider'
 import GaiaIconForLight from '@/assets/gaiaIconForLight'
 
-const formSchema = z.object({
-  email: z.string().email({
-    message: "Por favor, insira um email válido.",
-  }),
-  password: z.string().min(8, {
-    message: "A senha deve ter pelo menos 8 caracteres.",
-  }),
-})
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 export default function LoginPage() {
-  const [loginError, setLoginError] = useState<string | null>(null);
+  //const [] = useState<string | null>(null);
   const { theme } = useTheme();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log('Login com:', values)
-    setLoginError("Credenciais inválidas. Por favor, tente novamente.")
-  }
 
   const handleSpotifyLogin = () => {
     console.log('Login com Spotify')
