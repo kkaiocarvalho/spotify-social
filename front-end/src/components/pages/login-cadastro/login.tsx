@@ -49,10 +49,8 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#1f1f1f] flex items-center justify-center p-4">
       <Card className="w-full max-w-md border-none bg-zinc-800 text-white">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center flex items-center justify-center ">
+          <CardTitle className="text-2xl font-bold text-center flex items-center justify-center mb-2">
             <GaiaIcon/>
-            <text>aia</text>
-            <text className='font-thin'>Music</text>
           </CardTitle>
           <CardDescription className="text-zinc-400 text-center">
           Crie uma atmosfera envolvente com música no seu espaço
