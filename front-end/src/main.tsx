@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import LoginPage from './components/pages/login-cadastro/login.tsx';
 import CadastroPage from './components/pages/login-cadastro/cadastro.tsx';
+import HomePage from './components/pages/home.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,10 +23,16 @@ const router = createBrowserRouter([
         path: "cadastro",
         element: <CadastroPage />,
       },
+      {
+        path: "home",
+        element: <HomePage />,
+      },
     ],
+
   },
 ]);
 
+// biome-ignore lint/style/noNonNullAssertion: <explanation>
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={router} />

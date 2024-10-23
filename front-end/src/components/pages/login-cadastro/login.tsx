@@ -7,8 +7,6 @@ import { useTheme } from '@/components/theme-provider'
 import GaiaIconForLight from '@/assets/gaiaIconForLight'
 import BackgroundImage  from "@/components/imageBackground"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
 export default function LoginPage() {
   const [, ] = useState<string | null>(null);
   const { theme } = useTheme();
