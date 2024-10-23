@@ -5,6 +5,7 @@ import IconSpotifySocial from '@/assets/icon'
 import GaiaIconForDark from '@/assets/gaiaIconForDark'
 import { useTheme } from '@/components/theme-provider'
 import GaiaIconForLight from '@/assets/gaiaIconForLight'
+import BackgroundImage  from "@/components/imageBackground"
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
@@ -12,15 +13,13 @@ export default function LoginPage() {
   const [, ] = useState<string | null>(null);
   const { theme } = useTheme();
 
-
-
   const handleSpotifyLogin = () => {
     console.log('Login com Spotify')
   }
 
   return (
-    <div className="flex items-center justify-center h-[500px]">  
-      <Card className="w-full max-w-md border-none bg-card">
+    <div className="flex items-center justify-center h-[500px]">
+      <Card className="w-full max-w-md border-none bg-card z-10">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center flex items-center justify-center mb-2">
             {theme === 'dark'? <GaiaIconForDark/> : <GaiaIconForLight/>}
@@ -29,6 +28,7 @@ export default function LoginPage() {
             Crie uma atmosfera envolvente com música no seu espaço
           </CardDescription>
         </CardHeader>
+        <BackgroundImage />
         <CardContent>
           {/*
           <Form {...form}>
