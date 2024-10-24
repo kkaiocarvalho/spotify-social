@@ -1,15 +1,16 @@
 import { useTheme } from "@/components/theme-provider";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "../ui/input";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "../ui/card";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import {icons, SearchIcon } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+  } from "@/components/ui/accordion";
+  
 
 export default function HomePage() {
 	const { theme } = useTheme();
@@ -29,56 +30,56 @@ export default function HomePage() {
 			url: "https://yt3.googleusercontent.com/dWJssjbHkqrl4utQz7XGKld5n9gfAxoeIi6j1KFPjLc7DJULvBYIyrGHIg1jsCcaiEVl6X6Cdg=s900-c-k-c0x00ffffff-no-rj",
 		},
 		{
-			nome: "Linkin Park",
-			url: "https://lastfm.freetls.fastly.net/i/u/300x300/01aa4556b6916185ecd890dad8a42f47.jpg",
+			nome: "Artic Monkeys",
+			url: "https://m.media-amazon.com/images/I/71-Y-3usHkL._UF894,1000_QL80_.jpg",
 		},
 		{
-			nome: "Morada",
-			url: "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1pRrAk-default.jpg",
+			nome: "Imagine Dragons",
+			url: "https://akamai.sscdn.co/uploadfile/letras/albuns/5/9/d/d/577561571234069.jpg",
 		},
 		{
-			nome: "Leonardo",
-			url: "https://yt3.googleusercontent.com/dWJssjbHkqrl4utQz7XGKld5n9gfAxoeIi6j1KFPjLc7DJULvBYIyrGHIg1jsCcaiEVl6X6Cdg=s900-c-k-c0x00ffffff-no-rj",
+			nome: "Mamonas Assasinas",
+			url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUib0yTb8KEQYrgturWFA2rF2INpJ1IHylZQ&s",
 		},
 		{
-			nome: "Linkin Park",
-			url: "https://lastfm.freetls.fastly.net/i/u/300x300/01aa4556b6916185ecd890dad8a42f47.jpg",
+			nome: "Bruno Mars",
+			url: "https://i.scdn.co/image/ab6761610000e5ebc36dd9eb55fb0db4911f25dd",
 		},
 		{
-			nome: "Morada",
-			url: "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1pRrAk-default.jpg",
+			nome: "50cent",
+			url: "https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2",
 		},
 		{
-			nome: "Leonardo",
-			url: "https://yt3.googleusercontent.com/dWJssjbHkqrl4utQz7XGKld5n9gfAxoeIi6j1KFPjLc7DJULvBYIyrGHIg1jsCcaiEVl6X6Cdg=s900-c-k-c0x00ffffff-no-rj",
+			nome: "Eminem",
+			url: "https://midias.correiobraziliense.com.br/_midias/jpg/2024/09/23/800x600/1_o_que_eminem_escreveu_sobre_p__diddy_em_novo_album-40168737.jpg?20240923133148?20240923133148",
 		},
 		{
-			nome: "Linkin Park",
-			url: "https://lastfm.freetls.fastly.net/i/u/300x300/01aa4556b6916185ecd890dad8a42f47.jpg",
+			nome: "Ariana Grande",
+			url: "https://i.scdn.co/image/ab67616d0000b273c3af0c2355c24ed7023cd394",
 		},
 		{
-			nome: "Morada",
-			url: "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1pRrAk-default.jpg",
+			nome: "Michael Jackson",
+			url: "https://br.web.img3.acsta.net/pictures/210/152/21015281_20130625213155152.jpg",
 		},
 		{
-			nome: "Leonardo",
-			url: "https://yt3.googleusercontent.com/dWJssjbHkqrl4utQz7XGKld5n9gfAxoeIi6j1KFPjLc7DJULvBYIyrGHIg1jsCcaiEVl6X6Cdg=s900-c-k-c0x00ffffff-no-rj",
+			nome: "Gustavo Lima",
+			url: "https://cdns-images.dzcdn.net/images/artist/c9a6f79f4dd4377db809f8b8d772f8e8/1900x1900-000000-80-0-0.jpg",
 		},
 		{
-			nome: "Linkin Park",
-			url: "https://lastfm.freetls.fastly.net/i/u/300x300/01aa4556b6916185ecd890dad8a42f47.jpg",
+			nome: "Player Tauz",
+			url: "https://i1.sndcdn.com/avatars-000625941075-nff3um-t240x240.jpg",
 		},
 		{
-			nome: "Morada",
-			url: "https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1pRrAk-default.jpg",
+			nome: "Robero Carlos",
+			url: "https://i.scdn.co/image/818f9ce3057354c119192da2b670781c30f87a7d",
 		},
 		{
-			nome: "Leonardo",
-			url: "https://yt3.googleusercontent.com/dWJssjbHkqrl4utQz7XGKld5n9gfAxoeIi6j1KFPjLc7DJULvBYIyrGHIg1jsCcaiEVl6X6Cdg=s900-c-k-c0x00ffffff-no-rj",
+			nome: "INTERWORLD",
+			url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQrXuXBLRJkkX5MsUy8DJmZ1bh_cwldpcAGA&s",
 		},
 		{
-			nome: "Linkin Park",
-			url: "https://lastfm.freetls.fastly.net/i/u/300x300/01aa4556b6916185ecd890dad8a42f47.jpg",
+			nome: "Billie Eilish",
+			url: "https://i.scdn.co/image/ab67616d00001e022a038d3bf875d23e4aeaa84e",
 		},
 	];
 
@@ -88,20 +89,33 @@ export default function HomePage() {
 	//     "Minha vida"
 	// ];
 
-	const playlists = [
+    const playlists = [
         {
-            icon: icons.AArrowDown,
-            nome: "Músicas para relaxar",
+            "nome": "Gospel",
+            "musicas": [
+                "Agnus Dei - Michael W. Smith",
+                "Ele É Exaltado - Aline Barros",
+                "Ninguém Explica Deus - Preto no Branco"
+            ]
         },
         {
-            icon: icons.AArrowDown,
-            nome: "Músicas para relaxar",
+            "nome": "Sertanejo",
+            "musicas": [
+                "Evidências - Chitãozinho & Xororó",
+                "Ai Se Eu Te Pego - Michel Teló",
+                "Deus Me Livre - Leonardo"
+            ]
         },
         {
-            icon: icons.AArrowDown,
-            nome: "Músicas para relaxar",
-        },
+            "nome": "Rock",
+            "musicas": [
+                "In the End - Linkin Park",
+                "Bohemian Rhapsody - Queen",
+                "Smells Like Teen Spirit - Nirvana"
+            ]
+        }
     ];
+    
 
 	return (
 		<div className="flex items-center justify-center px-10">
@@ -139,7 +153,7 @@ export default function HomePage() {
 											alt={item.nome}
 											className="h-20 w-20 rounded-lg"
 										/>
-										<span className="text-center w-[80px] truncate">
+										<span className="text-center w-[150px] truncate">
 											{item.nome}
 										</span>
 									</Avatar>
@@ -172,12 +186,22 @@ export default function HomePage() {
 							<CardHeader>
 								<CardTitle>Playlists</CardTitle>
 							</CardHeader>
-							<CardDescription>
-								{playlists.map((item, index) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-									<div key={index}>{item.nome}</div>
-								))}
-							</CardDescription>
+                            <CardDescription>
+                    {/* biome-ignore lint/suspicious/noArrayIndexKey: <explanation> */}
+                    {/*{playlists.map((item, index) => (<div key={index}>{item}</div>))}*/}
+                    {
+                        playlists.map((item, index) => (
+                            <Accordion key={index} type="multiple">
+                                <AccordionItem value={item.nome}> 
+                                    <AccordionTrigger>{item.nome}</AccordionTrigger>
+                                    <AccordionContent>
+                                    <div className="flex flex-col justify-start">{item.musicas.map((musica, musicaIndex) => <div className="bg-gray-300 p-1 m-2" key={musicaIndex}>{musica}</div>)}</div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        ))
+                    }
+                    </CardDescription>
 						</CardContent>
 					</Card>
 				</TabsContent>
