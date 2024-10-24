@@ -2,15 +2,20 @@ import { useTheme } from "@/components/theme-provider";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "../ui/input";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
-import {icons, SearchIcon } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { SearchIcon } from "lucide-react";
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-  } from "@/components/ui/accordion";
-  
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function HomePage() {
 	const { theme } = useTheme();
@@ -89,33 +94,32 @@ export default function HomePage() {
 	//     "Minha vida"
 	// ];
 
-    const playlists = [
-        {
-            "nome": "Gospel",
-            "musicas": [
-                "Agnus Dei - Michael W. Smith",
-                "Ele É Exaltado - Aline Barros",
-                "Ninguém Explica Deus - Preto no Branco"
-            ]
-        },
-        {
-            "nome": "Sertanejo",
-            "musicas": [
-                "Evidências - Chitãozinho & Xororó",
-                "Ai Se Eu Te Pego - Michel Teló",
-                "Deus Me Livre - Leonardo"
-            ]
-        },
-        {
-            "nome": "Rock",
-            "musicas": [
-                "In the End - Linkin Park",
-                "Bohemian Rhapsody - Queen",
-                "Smells Like Teen Spirit - Nirvana"
-            ]
-        }
-    ];
-    
+	const playlists = [
+		{
+			nome: "Gospel",
+			musicas: [
+				"Agnus Dei - Michael W. Smith",
+				"Ele É Exaltado - Aline Barros",
+				"Ninguém Explica Deus - Preto no Branco",
+			],
+		},
+		{
+			nome: "Sertanejo",
+			musicas: [
+				"Evidências - Chitãozinho & Xororó",
+				"Ai Se Eu Te Pego - Michel Teló",
+				"Deus Me Livre - Leonardo",
+			],
+		},
+		{
+			nome: "Rock",
+			musicas: [
+				"In the End - Linkin Park",
+				"Bohemian Rhapsody - Queen",
+				"Smells Like Teen Spirit - Nirvana",
+			],
+		},
+	];
 
 	return (
 		<div className="flex items-center justify-center px-10">
@@ -169,8 +173,7 @@ export default function HomePage() {
 								<CardTitle className="text-center">Buscar Música</CardTitle>
 							</CardHeader>
 							<CardDescription className="flex justify-center items-center px-10 gap-2 ">
-                                   
-                                <SearchIcon className="h-6 w-6 text-muted-foreground" />
+								<SearchIcon className="h-6 w-6 text-muted-foreground" />
 								<Input
 									type="text"
 									placeholder="Buscar música"
@@ -186,22 +189,30 @@ export default function HomePage() {
 							<CardHeader>
 								<CardTitle>Playlists</CardTitle>
 							</CardHeader>
-                            <CardDescription>
-                    {/* biome-ignore lint/suspicious/noArrayIndexKey: <explanation> */}
-                    {/*{playlists.map((item, index) => (<div key={index}>{item}</div>))}*/}
-                    {
-                        playlists.map((item, index) => (
-                            <Accordion key={index} type="multiple">
-                                <AccordionItem value={item.nome}> 
-                                    <AccordionTrigger>{item.nome}</AccordionTrigger>
-                                    <AccordionContent>
-                                    <div className="flex flex-col justify-start">{item.musicas.map((musica, musicaIndex) => <div className="bg-gray-300 p-1 m-2" key={musicaIndex}>{musica}</div>)}</div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
-                        ))
-                    }
-                    </CardDescription>
+							<CardDescription>
+								{/*{playlists.map((item, index) => (<div key={index}>{item}</div>))}*/}
+								{playlists.map((item, index) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+									<Accordion key={index} type="multiple">
+										<AccordionItem value={item.nome}>
+											<AccordionTrigger>{item.nome}</AccordionTrigger>
+											<AccordionContent>
+												<div className="flex flex-col justify-start">
+													{item.musicas.map((musica, musicaIndex) => (
+														<div
+															className="bg-gray-300 p-1 m-2"
+															// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+															key={musicaIndex}
+														>
+															{musica}
+														</div>
+													))}
+												</div>
+											</AccordionContent>
+										</AccordionItem>
+									</Accordion>
+								))}
+							</CardDescription>
 						</CardContent>
 					</Card>
 				</TabsContent>
